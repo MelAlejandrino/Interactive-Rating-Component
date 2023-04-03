@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive rating component</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="container-content" id="main">
+                    <div class="circular-div">
+                        <picture>
+                            <img src="images/icon-star.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="text-content">
+                        <h1>How did we do?</h1>
+                        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering.</p>
+                    </div>
+                    <div class="rating">
+                        <ul role="list" id="ratingList">
+                            <li type="change" value="1">1</li>
+                            <li type="change" value="2">2</li>
+                            <li type="change" value="3">3</li>
+                            <li type="change" value="4">4</li>
+                            <li type="change" value="5">5</li>
+                        </ul>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit">SUBMIT</button>
+                    </div>
+                </div>
+                <span><div class="container-content2" id="end">
+                    <div class="phone">
+                        <picture>
+                            <img src="images/illustration-thank-you.svg" alt="">
+                        </picture>
+                    </div>
+                    <div class="rate">
+                        <p>You selected <span id="rateVal"></span> out of 5</p>
+                    </div>
+                    <div class="text-content2">
+                        <h1>Thank you!</h1>
+                        <p>We appreciate you taking the time to give a rating. if you ever need more support, don't hesitate to get in touch!</p>
+                    </div>
+                </div></span>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

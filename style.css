@@ -1,0 +1,227 @@
+/* CSS RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Variables */
+/* General Styling */
+body {
+  font-size: 0.9em;
+  font-family: "Overpass", sans-serif;
+}
+
+section {
+  background-color: hsl(216, 12%, 8%);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.circular-div {
+  background-color: hsl(213, 19%, 18%);
+}
+
+.container {
+  background: radial-gradient(circle at 50% -20%, #252d37, #252d37, #242c35, #222a33, #212831, #1f262e, #1d232b, #1b2128, #1a1f26, #181d24, #171c22, #171c22);
+  width: 28em;
+  height: 28em;
+  border-radius: 2em;
+}
+.container .container-content {
+  display: grid;
+  gap: 2em;
+}
+.container .container-content .circular-div {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.container .text-content {
+  display: grid;
+  gap: 0.5em;
+}
+.container .text-content h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.container .text-content p {
+  color: hsl(217, 12%, 63%);
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+}
+.rating ul {
+  cursor: pointer;
+  color: hsl(216, 12%, 54%);
+  display: flex;
+  gap: 1em;
+}
+.rating ul li {
+  background-color: hsl(213, 19%, 18%);
+  padding: 1em 1.5em;
+  border-radius: 50%;
+}
+.rating ul li:hover {
+  background-color: hsl(217, 12%, 63%);
+  color: white;
+  font-weight: bold;
+}
+.rating ul li.clickedRating {
+  background: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+}
+
+.btn-container button {
+  width: 100%;
+  padding: 0.6em;
+  border-radius: 10em;
+  border: none;
+  background-color: hsl(25, 97%, 53%);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-container button:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+}
+
+.container {
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 2em;
+}
+
+.container-content2 {
+  transform: translate(-0.4em, 0);
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 2em;
+  padding: 1.2em 1em;
+}
+.container-content2 .rate {
+  background-color: hsl(213, 19%, 18%);
+  padding: 0.5em 1em;
+  border-radius: 10em;
+}
+.container-content2 .rate p {
+  color: hsl(25, 97%, 53%);
+}
+.container-content2 .text-content2 h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+.container-content2 .text-content2 p {
+  color: hsl(216, 12%, 54%);
+}
+
+.animate-left {
+  animation-name: goleft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes goleft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-25em, 0);
+    display: none !important;
+  }
+}
+.end-left {
+  animation-name: goleft2;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes goleft2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.4em, -22em);
+  }
+}
+button.submitButton {
+  animation-name: error;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}/*# sourceMappingURL=style.css.map */

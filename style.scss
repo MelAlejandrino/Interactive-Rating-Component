@@ -1,0 +1,247 @@
+/* CSS RESET */
+    
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+html, body{
+	min-height: 100vh;
+}
+
+html{
+  color-scheme: dark light;
+}
+img, picture, svg, video{
+	display: block;
+	max-width: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Variables */
+
+$clr-primary: hsl(25, 97%, 53%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-200: hsl(217, 12%, 63%);
+$clr-neutral-300: hsl(216, 12%, 54%);
+$clr-neutral-600:hsl(213, 19%, 18%);
+$clr-neutral-900: hsl(216, 12%, 8%);
+
+$fs-body: 0.9em;
+
+$ff-primary: 'Overpass', sans-serif;
+$fw-400: 400;
+$fw-700: 700;
+
+/* General Styling */
+
+body{
+  font-size: $fs-body;
+  font-family: $ff-primary;
+}
+section{
+  background-color: $clr-neutral-900;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.circular-div{
+  background-color: $clr-neutral-600;
+}
+.container{
+  background: radial-gradient(circle at 50% -20%, #252d37, #252d37, #242c35, #222a33, #212831, #1f262e, #1d232b, #1b2128, #1a1f26, #181d24, #171c22, #171c22);
+  width: min(28em, 40em);
+  height: 28em;
+  border-radius: 2em;
+
+  .container-content{
+    display: grid;
+    gap: 2em;
+    .circular-div{
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  .text-content{
+    display: grid;
+    gap: 0.5em;
+    h1{
+      font-size: 1.8em;
+      font-weight: $fw-700;
+    }
+    p{
+      color: $clr-neutral-200;
+    }
+  }
+}
+
+.rating{
+  display: flex;
+  
+  justify-content: center;
+  ul{
+    cursor: pointer;
+    color: $clr-neutral-300;
+    display: flex;
+    gap: 1em;
+    li{
+      background-color: $clr-neutral-600;
+      padding: 1em 1.5em;
+      border-radius: 50%;
+    }
+
+    li:hover{
+      background-color: $clr-neutral-200;
+      color: white;
+      font-weight: bold;
+    }
+
+    li.clickedRating {
+      background: $clr-primary;
+      color: $clr-neutral-100;
+    }
+  }
+}
+
+.btn-container{
+  button{
+    width: 100%;
+    padding: 0.6em;
+    border-radius: 10em;
+    border: none;
+    background-color: $clr-primary;
+    letter-spacing: 0.2em;
+    font-weight: $fw-700;
+    cursor: pointer;
+    
+  }
+
+  button:hover{
+    background-color: $clr-neutral-100;
+    color: $clr-primary;
+  }
+}
+
+.container{
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 2em;
+  
+}
+
+
+.container-content2{
+  transform: translate(-0.4em, 0);
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 2em;
+  padding: 1.2em 1em;
+  .rate{
+    background-color: $clr-neutral-600;
+    padding: 0.5em 1em;
+    border-radius: 10em;
+    p{
+      color: $clr-primary;
+    }
+  }
+
+  .text-content2{
+    h1{
+      font-size: 2em;
+      font-weight: $fw-700;
+    }
+
+    p{
+      color: $clr-neutral-300;
+    }
+  }
+}
+
+.animate-left{
+  animation-name: goleft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes goleft{
+  0% {opacity: 1;}
+  100% {opacity: 0;
+        transform: translate(-25em,0);
+        display: none !important;
+      }
+}
+
+.end-left{
+  animation-name: goleft2;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes goleft2{
+  0% {opacity: 0;}
+  100% {
+    opacity: 1;
+        transform: translate(-0.4em,-22em);
+      }
+}
+
+button.submitButton{
+  animation-name: error;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes error{
+  0%{ transform: translateX(-10px); }
+  25%{ transform: translateX(20px); }
+  75%{ transform: translateX(-20px); }
+  100%{ transform: translateX(10px); }
+}
+
+
+
